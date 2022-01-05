@@ -1,30 +1,28 @@
-// makes visible false by default
-let visible = false;
+import React, { useState } from 'react';
 
-// function to toggle visible 
-const toggleVisibility = () => {
-    // !visible flips the false value
-    visible = !visible;
-};
-
-// Title
-// toggleVisibility button
-// {visibile is true ? this mssg : if not this one}
-// {visible is true && render <p>}
-const visibility = (
-    <div>
-    <h1>Visibility Toggle</h1>
-    <button onClick={toggleVisibility}>
-    {visible ? 'hide details' : 'show details'}
-    </button>
-    {visible && (
+function App() {
+    let [count, setCount] = useState(0);
+    
+    const addOne = () => {
+        setCount(count++)
+    };
+    
+    const minusOne = () => {
+        setCount(count--)
+    };
+    
+    const reset = () => {
+        setCount(count = 0)
+    };
+    return (
         <div>
-        <p>Hey Hey</p>
+        <h1>Counter</h1>
+        <h2>{count}</h2>
+        <button onClick={addOne}>+1</button>
+        <button disabled={count === 0} onClick={minusOne}>-1</button>
+        <button disabled={count === 0} onClick={reset}>Reset</button>
         </div>
-    )}
-    </div>
-);
-
-function App() { return visibility }
+    )
+}
   
 export default App;
