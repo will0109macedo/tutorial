@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+// import App6 from './Indecision';
+import App from './NewCounter';
+// import App5 from './ES6classes';
 // import App4 from './App4';
 // import App3 from './App3';
 // import App2 from './Counter';
